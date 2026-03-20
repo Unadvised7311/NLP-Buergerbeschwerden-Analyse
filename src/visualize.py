@@ -19,5 +19,4 @@ def plot_top_words(model, feature_names, n_top_words, title):
     return fig
 
 def visualize_lda_placeholder():
-    # Da pyLDAvis auf Arch/3.14 oft scheitert, erwähnen wir es als Option
     print("Interaktive pyLDAvis-Visualisierung vorbereitet.")
