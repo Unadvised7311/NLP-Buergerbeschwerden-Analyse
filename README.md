@@ -3,7 +3,7 @@
 Dieses Projekt analysiert unstrukturierte Beschwerdetexte, um Kernthemen für kommunale Entscheidungsträger zu identifizieren.
 
 ## Installation
-1. Repository klonen: `git clone <dein-link>`
+1. Repository klonen: `git clone https://github.com/Unadvised7311/NLP-Buergerbeschwerden-Analyse.git`
 2. Virtuelle Umgebung erstellen: `python -m venv venv`
 3. Abhängigkeiten installieren: `pip install -r requirements.txt`
 4. Spacy-Modell laden: `python -m spacy download en_core_web_sm`
