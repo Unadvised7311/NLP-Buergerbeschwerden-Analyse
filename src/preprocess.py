@@ -1,12 +1,12 @@
 import spacy
 import re
 
-# Laden des Sprachmodells laut Konzept [cite: 9, 15]
+# Laden des Sprachmodells
 nlp = spacy.load("en_core_web_sm", disable=['parser', 'ner'])
 
 def preprocess_pipeline(texts):
     processed_texts = []
-    # Domänenspezifische Stoppwörter laut Konzept [cite: 8]
+    # Domänenspezifische Stoppwörter
     custom_stopwords = {'dear', 'complaint', 'bank', 'service', 'please', 'xxxx', 'xxxxxxxx'}
 
     for doc in nlp.pipe(texts, batch_size=500):
