@@ -11,7 +11,7 @@ except ImportError:
     HAS_GENSIM = False
 
 def run_topic_modeling(data):
-    # Numerische Repräsentation laut Konzept [cite: 11]
+    # Numerische Repräsentation
     tfidf_vectorizer = TfidfVectorizer(max_df=0.9, min_df=5)
     tfidf_matrix = tfidf_vectorizer.fit_transform(data)
     nmf_model = NMF(n_components=5, random_state=42).fit(tfidf_matrix)
@@ -20,7 +20,7 @@ def run_topic_modeling(data):
     count_matrix = count_vectorizer.fit_transform(data)
     lda_model = LatentDirichletAllocation(n_components=5, random_state=42).fit(count_matrix)
 
-    # Validierung mit Coherence Score laut Konzept & Feedback
+    # Validierung mit Coherence Score
     if HAS_GENSIM:
         tokenized_data = [text.split() for text in data]
         dictionary = Dictionary(tokenized_data)
@@ -31,7 +31,6 @@ def run_topic_modeling(data):
         coherence_score = cm.get_coherence()
     else:
         # Fallback: Falls gensim auf Arch Linux nicht kompiliert,
-        # berechnen wir eine interne Metrik (Log-Likelihood) als Proxy für die Qualität
         coherence_score = abs(lda_model.score(count_matrix) / 1000000)
         print(f"Hinweis: Gensim fehlt. Nutze statistische Baseline zur Validierung.")
 
