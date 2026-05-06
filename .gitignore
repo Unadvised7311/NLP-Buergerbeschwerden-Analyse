@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Lokale Analyse-Konfiguration (Pfade rechnerabhängig)
+analysis.config.json
+
+# Vollständiger CFPB-Export — zu groß für GitHub; lokal halten oder separat beziehen
+data/rows.csv
+
+# Ausgaben von main.py / Skripten — nach Ausführung lokal neu erzeugen
+results/visuals/*.png
+results/topics_extracted.json

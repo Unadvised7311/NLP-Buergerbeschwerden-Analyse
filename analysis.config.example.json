@@ -1,0 +1,10 @@
+{
+  "beschreibung": "Nach analysis.config.json kopieren; liegt bei Bedarf nur lokal.",
+  "data_path": "data/rows.csv",
+  "language": "en",
+  "text_column": null,
+  "sample_size": 5000,
+  "encoding": "auto",
+  "csv_separator": null,
+  "chunk_size": 100000
+}
